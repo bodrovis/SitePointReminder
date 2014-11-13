@@ -1,0 +1,12 @@
+<% content_for(:page_header) { "Add todo" } %>
+
+<%= form_for @todo do |f| %>
+  <%= render 'shared/errors', object: @todo %>
+
+  <div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title, class: 'form-control' %>
+  </div>
+
+  <%= f.submit 'Submit', class: 'btn btn-primary' %>
+<% end %>

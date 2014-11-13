@@ -1,0 +1,13 @@
+<% content_for(:page_header) { "Your todos" } %>
+
+<%= link_to 'Add todo', new_todo_path, class: 'btn btn-primary' %>
+
+<div class="panel">
+  <div class="panel-body">
+    <ul>
+      <% @todos.each do |todo| %>
+        <li><%= todo.title %> <%= link_to 'Done', todo_path(todo), method: :delete %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
